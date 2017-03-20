@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+var num = prompt("Please enter a number.");
+
+var num100k = num % 100000
+var num100ksub = num - num100k
+var hunk = num100ksub / 100000
+//321987 % 100000 = 21987
+//321987 - 21987 = 300000
+//300000 / 100000 = 3
+var num10k = num % 10000
+var num10ksub = num - num10k - num100ksub
+var tenk = num10ksub / 10000
+//321987 % 10000 = 1987
+//321987 - 1987 - 300000 = 20000
+//20000/10000 = 2
+var numthou = num % 1000;
+var numthousub = num - numthou - num100ksub - num10ksub;
+var thousand = numthousub / 1000;
+//321987 % 1000 = 987
+//321987 - 987 - 20000 - 300000 = 1000
+//1000/1000 = 1
+var numhun = num % 100;
+var numhunsub = num - numhun;
+var numhundiv = numhunsub - numthousub - num100ksub - num10ksub;
+var hundreds = numhundiv / 100;
+//321987 % 100 = 87
+//321987 - 87 = 321900
+//321900 - 1000 - 20000 - 300000 = 900
+//900 / 10 = 9
+var numtens = num % 10;
+var numtenssub = num - numtens - numhundiv - numthousub - num10ksub - num100ksub
+var tens = numtenssub / 10;
+//321987 % 10 = 7
+//321987 - 7 - 9000 - 1000 - 20000 - 300000 = 80
+//80/10 = 8
+var ones = num % 10; 
+//256 % 10 = 6
+console.log(hunk + " hundred thousands\n" + tenk + " ten thousands\n" + thousand + " thousands\n" + hundreds + " hundreds\n" + tens + " tens\n" + ones + " ones");
+</script>
+</body>
+</html>
